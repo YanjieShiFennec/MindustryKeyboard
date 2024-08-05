@@ -1,0 +1,159 @@
+# keyboard input
+
+sensor result1 switch1 @enabled
+jump 6 equal result1 0
+control enabled switch1 0 0 0 0
+write 1 cell1 0
+write 1 cell1 1
+end
+sensor result2 switch2 @enabled
+jump 12 equal result2 0
+control enabled switch2 0 0 0 0
+write 2 cell1 0
+write 1 cell1 1
+end
+sensor result3 switch3 @enabled
+jump 18 equal result3 0
+control enabled switch3 0 0 0 0
+write 3 cell1 0
+write 1 cell1 1
+end
+sensor result4 switch4 @enabled
+jump 24 equal result4 0
+control enabled switch4 0 0 0 0
+write 4 cell1 0
+write 1 cell1 1
+end
+sensor result5 switch5 @enabled
+jump 30 equal result5 0
+control enabled switch5 0 0 0 0
+write 5 cell1 0
+write 1 cell1 1
+end
+sensor result6 switch6 @enabled
+jump 36 equal result6 0
+control enabled switch6 0 0 0 0
+write 6 cell1 0
+write 1 cell1 1
+end
+sensor result7 switch7 @enabled
+jump 42 equal result7 0
+control enabled switch7 0 0 0 0
+write 7 cell1 0
+write 1 cell1 1
+end
+sensor result8 switch8 @enabled
+jump 48 equal result8 0
+control enabled switch8 0 0 0 0
+write 8 cell1 0
+write 1 cell1 1
+end
+sensor result9 switch9 @enabled
+jump 54 equal result9 0
+control enabled switch9 0 0 0 0
+write 9 cell1 0
+write 1 cell1 1
+end
+sensor result10 switch10 @enabled
+jump 60 equal result10 0
+control enabled switch10 0 0 0 0
+write 10 cell1 0
+write 1 cell1 1
+end
+sensor result11 switch11 @enabled
+jump 66 equal result11 0
+control enabled switch11 0 0 0 0
+write 11 cell1 0
+write 1 cell1 1
+end
+sensor result12 switch12 @enabled
+jump 72 equal result12 0
+control enabled switch12 0 0 0 0
+write 12 cell1 0
+write 1 cell1 1
+end
+sensor result13 switch13 @enabled
+jump 78 equal result13 0
+control enabled switch13 0 0 0 0
+write 13 cell1 0
+write 1 cell1 1
+end
+sensor result14 switch14 @enabled
+jump 84 equal result14 0
+control enabled switch14 0 0 0 0
+write 14 cell1 0
+write 1 cell1 1
+end
+sensor result15 switch15 @enabled
+jump 90 equal result15 0
+control enabled switch15 0 0 0 0
+write 15 cell1 0
+write 1 cell1 1
+end
+sensor result16 switch16 @enabled
+jump 96 equal result16 0
+control enabled switch16 0 0 0 0
+write 16 cell1 0
+write 1 cell1 1
+end
+sensor result17 switch17 @enabled
+jump 102 equal result17 0
+control enabled switch17 0 0 0 0
+write 17 cell1 0
+write 1 cell1 1
+end
+sensor result18 switch18 @enabled
+jump 108 equal result18 0
+control enabled switch18 0 0 0 0
+write 18 cell1 0
+write 1 cell1 1
+end
+sensor result19 switch19 @enabled
+jump 114 equal result19 0
+control enabled switch19 0 0 0 0
+write 19 cell1 0
+write 1 cell1 1
+end
+sensor result20 switch20 @enabled
+jump 120 equal result20 0
+control enabled switch20 0 0 0 0
+write 20 cell1 0
+write 1 cell1 1
+end
+sensor result21 switch21 @enabled
+jump 126 equal result21 0
+control enabled switch21 0 0 0 0
+write 21 cell1 0
+write 1 cell1 1
+end
+sensor result22 switch22 @enabled
+jump 132 equal result22 0
+control enabled switch22 0 0 0 0
+write 22 cell1 0
+write 1 cell1 1
+end
+sensor result23 switch23 @enabled
+jump 138 equal result23 0
+control enabled switch23 0 0 0 0
+write 23 cell1 0
+write 1 cell1 1
+end
+sensor result24 switch24 @enabled
+jump 144 equal result24 0
+control enabled switch24 0 0 0 0
+write 24 cell1 0
+write 1 cell1 1
+end
+sensor result25 switch25 @enabled
+jump 150 equal result25 0
+control enabled switch25 0 0 0 0
+write 25 cell1 0
+write 1 cell1 1
+end
+sensor result26 switch26 @enabled
+jump 156 equal result26 0
+control enabled switch26 0 0 0 0
+write 26 cell1 0
+write 1 cell1 1
+end
+end

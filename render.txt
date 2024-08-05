@@ -1,0 +1,597 @@
+# render a character according to the block and index
+
+# screen total size: 80 * 80
+# top left quarter part size: 40 * 40
+# font size: 25 * 35, font pixel size: 5 * 5
+# top left quarter part coordinate:
+# top left vertex: (7.5, 73)
+# top right vertex: (27.5, 73)
+# bottom left vertex: (7.5, 48)
+# bottom left vertex: (27.5, 48)
+
+# listen ready_to_render signal
+read ready_to_render cell1 4
+jump 0 equal ready_to_render 0
+write 0 cell1 4
+
+read block cell1 2
+read index cell1 3
+
+# init x_offset
+op mod x_offset index 2
+op mul x_offset x_offset 40
+# init y_offset
+op idiv y_offset index 2
+op mul y_offset y_offset -40
+
+# connect screen by block
+getlink display block
+
+read key cell1 0
+
+# reset
+draw color 255 255 255 255 0 0
+op add x 0 x_offset
+op add y 40 y_offset
+draw rect x y 40 40 0 0
+drawflush display
+
+# font color
+draw col %000000 40 40 255 0 0
+
+# select alphabet
+# notice jump line change!!! comment is not calculated into line count
+
+# A
+jump 32 notEqual key 11
+# row
+op add x 12.5 x_offset
+op add y 73 y_offset
+draw rect x y 15 5 0 0
+op add x 7.5 x_offset
+op add y 53 y_offset
+draw rect x y 25 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 30 0 0
+op add x 27.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 30 0 0
+drawflush display
+jump 0 always
+
+# B
+jump 53 notEqual key 24
+# row
+op add x 7.5 x_offset
+op add y 73 y_offset
+draw rect x y 20 5 0 0
+op add x 7.5 x_offset
+op add y 58 y_offset
+draw rect x y 20 5 0 0
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 20 5 0 0
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+# column
+op add x 27.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 10 0 0
+op add x 27.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 10 0 0
+drawflush display
+jump 0 always
+
+# C
+jump 71 notEqual key 22
+# row
+op add x 12.5 x_offset
+op add y 73 y_offset
+draw rect x y 15 5 0 0
+op add x 12.5 x_offset
+op add y 43 y_offset
+draw rect x y 15 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 25 0 0
+op add x 27.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 5 0 0
+op add x 27.5 x_offset
+op add y 68 y_offset
+draw rect x y 5 5 0 0
+drawflush display
+jump 0 always
+
+# D
+jump 86 notEqual key 13
+# row
+op add x 7.5 x_offset
+op add y 73 y_offset
+draw rect x y 20 5 0 0
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 20 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+op add x 27.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 25 0 0
+drawflush display
+jump 0 always
+
+# E
+jump 101 notEqual key 3
+# row
+op add x 7.5 x_offset
+op add y 73 y_offset
+draw rect x y 25 5 0 0
+op add x 7.5 x_offset
+op add y 58 y_offset
+draw rect x y 20 5 0 0
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 25 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+drawflush display
+jump 0 always
+
+# F
+jump 113 notEqual key 14
+# row
+op add x 7.5 x_offset
+op add y 73 y_offset
+draw rect x y 25 5 0 0
+op add x 7.5 x_offset
+op add y 58 y_offset
+draw rect x y 20 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+drawflush display
+jump 0 always
+
+# G
+jump 131 notEqual key 15
+# row
+op add x 12.5 x_offset
+op add y 73 y_offset
+draw rect x y 15 5 0 0
+op add x 17.5 x_offset
+op add y 58 y_offset
+draw rect x y 15 5 0 0
+op add x 12.5 x_offset
+op add y 43 y_offset
+draw rect x y 15 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 25 0 0
+op add x 27.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 15 0 0
+drawflush display
+jump 0 always
+
+# H
+jump 143 notEqual key 16
+# row
+op add x 7.5 x_offset
+op add y 58 y_offset
+draw rect x y 25 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+op add x 27.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+drawflush display
+jump 0 always
+
+# I
+jump 155 notEqual key 8
+# row
+op add x 12.5 x_offset
+op add y 73 y_offset
+draw rect x y 15 5 0 0
+op add x 12.5 x_offset
+op add y 43 y_offset
+draw rect x y 15 5 0 0
+# column
+op add x 17.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+drawflush display
+jump 0 always
+
+# J
+jump 170 notEqual key 17
+# row
+op add x 17.5 x_offset
+op add y 73 y_offset
+draw rect x y 15 5 0 0
+op add x 12.5 x_offset
+op add y 43 y_offset
+draw rect x y 10 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 30 0 0
+drawflush display
+jump 0 always
+
+# K
+jump 197 notEqual key 18
+# row
+op add x 27.5 x_offset
+op add y 73 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 68 y_offset
+draw rect x y 5 5 0 0
+op add x 17.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 5 0 0
+op add x 12.5 x_offset
+op add y 58 y_offset
+draw rect x y 5 5 0 0
+op add x 17.5 x_offset
+op add y 55 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 5 0 0
+op add x 27.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+drawflush display
+jump 0 always
+
+# L
+jump 206 notEqual key 19
+# row
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 25 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+drawflush display
+jump 0 always
+
+# M
+jump 224 notEqual key 26
+# row
+op add x 12.5 x_offset
+op add y 68 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 68 y_offset
+draw rect x y 5 5 0 0
+op add x 17.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+op add x 27.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+drawflush display
+jump 0 always
+
+# N
+jump 242 notEqual key 25
+# row
+op add x 12.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 5 0 0
+op add x 17.5 x_offset
+op add y 58 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 53 y_offset
+draw rect x y 5 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+op add x 27.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+drawflush display
+jump 0 always
+
+# O
+jump 257 notEqual key 9
+# row
+op add x 12.5 x_offset
+op add y 73 y_offset
+draw rect x y 15 5 0 0
+op add x 12.5 x_offset
+op add y 43 y_offset
+draw rect x y 15 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 25 0 0
+op add x 27.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 25 0 0
+drawflush display
+jump 0 always
+
+# P
+jump 272 notEqual key 10
+# row
+op add x 7.5 x_offset
+op add y 73 y_offset
+draw rect x y 20 5 0 0
+op add x 7.5 x_offset
+op add y 58 y_offset
+draw rect x y 20 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+op add x 27.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 10 0 0
+drawflush display
+jump 0 always
+
+# Q
+jump 290 notEqual key 1
+# row
+op add x 12.5 x_offset
+op add y 73 y_offset
+draw rect x y 15 5 0 0
+op add x 12.5 x_offset
+op add y 48 y_offset
+draw rect x y 15 5 0 0
+op add x 22.5 x_offset
+op add y 43 y_offset
+draw rect x y 10 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 53 y_offset
+draw rect x y 5 20 0 0
+op add x 27.5 x_offset
+op add y 53 y_offset
+draw rect x y 5 20 0 0
+drawflush display
+jump 0 always
+
+# R
+jump 314 notEqual key 4
+# row
+op add x 7.5 x_offset
+op add y 73 y_offset
+draw rect x y 20 5 0 0
+op add x 7.5 x_offset
+op add y 58 y_offset
+draw rect x y 20 5 0 0
+op add x 17.5 x_offset
+op add y 53 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 5 0 0
+op add x 27.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+op add x 27.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 10 0 0
+drawflush display
+jump 0 always
+
+# S
+jump 338 notEqual key 12
+# row
+op add x 12.5 x_offset
+op add y 73 y_offset
+draw rect x y 15 5 0 0
+op add x 12.5 x_offset
+op add y 58 y_offset
+draw rect x y 15 5 0 0
+op add x 12.5 x_offset
+op add y 43 y_offset
+draw rect x y 15 5 0 0
+op add x 27.5 x_offset
+op add y 68 y_offset
+draw rect x y 5 5 0 0
+op add x 7.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 10 0 0
+op add x 27.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 10 0 0
+drawflush display
+jump 0 always
+
+# T
+jump 347 notEqual key 5
+# row
+op add x 7.5 x_offset
+op add y 73 y_offset
+draw rect x y 25 5 0 0
+# column
+op add x 17.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 35 0 0
+drawflush display
+jump 0 always
+
+# U
+jump 359 notEqual key 7
+# row
+op add x 12.5 x_offset
+op add y 43 y_offset
+draw rect x y 15 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 30 0 0
+op add x 27.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 30 0 0
+drawflush display
+jump 0 always
+
+# V
+jump 377 notEqual key 23
+# row
+op add x 12.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 5 0 0
+op add x 17.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 53 y_offset
+draw rect x y 5 25 0 0
+op add x 27.5 x_offset
+op add y 53 y_offset
+draw rect x y 5 25 0 0
+drawflush display
+jump 0 always
+
+# W
+jump 395 notEqual key 2
+# row
+op add x 12.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 30 0 0
+op add x 17.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 15 0 0
+op add x 27.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 30 0 0
+drawflush display
+jump 0 always
+
+# X
+jump 425 notEqual key 21
+# row
+op add x 12.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 5 0 0
+op add x 17.5 x_offset
+op add y 58 y_offset
+draw rect x y 5 5 0 0
+op add x 12.5 x_offset
+op add y 53 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 53 y_offset
+draw rect x y 5 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 10 0 0
+op add x 7.5 x_offset
+op add y 68 y_offset
+draw rect x y 5 10 0 0
+op add x 27.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 10 0 0
+op add x 27.5 x_offset
+op add y 68 y_offset
+draw rect x y 5 10 0 0
+drawflush display
+jump 0 always
+
+# Y
+jump 443 notEqual key 6
+# row
+op add x 12.5 x_offset
+op add y 58 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 58 y_offset
+draw rect x y 5 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 15 0 0
+op add x 17.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 15 0 0
+op add x 27.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 15 0 0
+drawflush display
+jump 0 always
+
+# Z
+jump 466 notEqual key 20
+# row
+op add x 7.5 x_offset
+op add y 73 y_offset
+draw rect x y 25 5 0 0
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 25 5 0 0
+op add x 27.5 x_offset
+op add y 68 y_offset
+draw rect x y 5 5 0 0
+op add x 22.5 x_offset
+op add y 63 y_offset
+draw rect x y 5 5 0 0
+op add x 17.5 x_offset
+op add y 58 y_offset
+draw rect x y 5 5 0 0
+op add x 12.5 x_offset
+op add y 53 y_offset
+draw rect x y 5 5 0 0
+op add x 7.5 x_offset
+op add y 48 y_offset
+draw rect x y 5 5 0 0
+# column
+drawflush display
+jump 0 always

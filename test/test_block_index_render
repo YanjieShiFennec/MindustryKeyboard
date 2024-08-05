@@ -1,0 +1,35 @@
+set block 0
+set index 0
+
+# init x_offset
+op mod x_offset index 2
+op mul x_offset x_offset 40
+# init y_offset
+op idiv y_offset index 2
+op mul y_offset y_offset -40
+
+# connect screen by block
+getlink display block
+
+# font color
+draw col %000000 40 40 255 0 0
+
+# select alphabet
+# notice jump line change!!! comment is not calculated into line count
+
+# A
+# row
+op add x 12.5 x_offset
+op add y 73 y_offset
+draw rect x y 15 5 0 0
+op add x 7.5 x_offset
+op add y 53 y_offset
+draw rect x y 25 5 0 0
+# column
+op add x 7.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 30 0 0
+op add x 27.5 x_offset
+op add y 43 y_offset
+draw rect x y 5 30 0 0
+drawflush display

@@ -1,0 +1,330 @@
+# screen total size: 80 * 80
+# top left quarter part size: 40 * 40
+# font size: 25 * 35, font pixel size: 5 * 5
+# top left quarter part coordinate:
+# top left vertex: (7.5, 73)
+# top right vertex: (27.5, 73)
+# bottom left vertex: (7.5, 48)
+# bottom left vertex: (27.5, 48)
+
+# reset
+draw color 255 255 255 255 0 0
+draw rect 40.0 0.0 40 40 0 0
+drawflush display1
+
+# font color
+draw col %000000 40 40 255 0 0
+
+# select alphabet
+# notice jump line change!!! comment is not calculated into line count
+set result "z"
+jump 32 equal result "a"
+jump 38 equal result "b"
+jump 46 equal result "c"
+jump 53 equal result "d"
+jump 59 equal result "e"
+jump 65 equal result "f"
+jump 70 equal result "g"
+jump 77 equal result "h"
+jump 82 equal result "i"
+jump 87 equal result "j"
+jump 93 equal result "k"
+jump 103 equal result "l"
+jump 107 equal result "m"
+jump 114 equal result "n"
+jump 121 equal result "o"
+jump 127 equal result "p"
+jump 133 equal result "q"
+jump 140 equal result "r"
+jump 149 equal result "s"
+jump 158 equal result "t"
+jump 162 equal result "u"
+jump 167 equal result "v"
+jump 174 equal result "w"
+jump 181 equal result "x"
+jump 192 equal result "y"
+jump 199 equal result "z"
+stop
+
+# rect parameter:
+# draw rect x y width length [0] [0]
+
+# A
+# row
+draw rect 52.5 33.0 15 5 0 0
+draw rect 47.5 13.0 25 5 0 0
+# column
+draw rect 47.5 3.0 5 30 0 0
+draw rect 67.5 3.0 5 30 0 0
+drawflush display1
+stop
+
+# B
+# row
+draw rect 47.5 33.0 20 5 0 0
+draw rect 47.5 18.0 20 5 0 0
+draw rect 47.5 3.0 20 5 0 0
+draw rect 47.5 3.0 5 35 0 0
+# column
+draw rect 67.5 8.0 5 10 0 0
+draw rect 67.5 23.0 5 10 0 0
+drawflush display1
+stop
+
+# C
+# row
+draw rect 52.5 33.0 15 5 0 0
+draw rect 52.5 3.0 15 5 0 0
+# column
+draw rect 47.5 8.0 5 25 0 0
+draw rect 67.5 8.0 5 5 0 0
+draw rect 67.5 28.0 5 5 0 0
+drawflush display1
+stop
+
+# D
+# row
+draw rect 47.5 33.0 20 5 0 0
+draw rect 47.5 3.0 20 5 0 0
+# column
+draw rect 47.5 3.0 5 35 0 0
+draw rect 67.5 8.0 5 25 0 0
+drawflush display1
+stop
+
+# E
+# row
+draw rect 47.5 33.0 25 5 0 0
+draw rect 47.5 18.0 20 5 0 0
+draw rect 47.5 3.0 25 5 0 0
+# column
+draw rect 47.5 3.0 5 35 0 0
+drawflush display1
+stop
+
+# F
+# row
+draw rect 47.5 33.0 25 5 0 0
+draw rect 47.5 18.0 20 5 0 0
+# column
+draw rect 47.5 3.0 5 35 0 0
+drawflush display1
+stop
+
+# G
+# row
+draw rect 52.5 33.0 15 5 0 0
+draw rect 57.5 18.0 15 5 0 0
+draw rect 52.5 3.0 15 5 0 0
+# column
+draw rect 47.5 8.0 5 25 0 0
+draw rect 67.5 8.0 5 15 0 0
+drawflush display1
+stop
+
+# H
+# row
+draw rect 47.5 18.0 25 5 0 0
+# column
+draw rect 47.5 3.0 5 35 0 0
+draw rect 67.5 3.0 5 35 0 0
+drawflush display1
+stop
+
+# I
+# row
+draw rect 52.5 33.0 15 5 0 0
+draw rect 52.5 3.0 15 5 0 0
+# column
+draw rect 57.5 3.0 5 35 0 0
+drawflush display1
+stop
+
+# J
+# row
+draw rect 57.5 33.0 15 5 0 0
+draw rect 52.5 3.0 10 5 0 0
+# column
+draw rect 47.5 8.0 5 5 0 0
+draw rect 62.5 8.0 5 30 0 0
+drawflush display1
+stop
+
+# K
+# row
+draw rect 67.5 33.0 5 5 0 0
+draw rect 62.5 28.0 5 5 0 0
+draw rect 57.5 23.0 5 5 0 0
+draw rect 52.5 18.0 5 5 0 0
+draw rect 57.5 15.0 5 5 0 0
+draw rect 62.5 8.0 5 5 0 0
+draw rect 67.5 3.0 5 5 0 0
+# column
+draw rect 47.5 3.0 5 35 0 0
+drawflush display1
+stop
+
+# L
+# row
+draw rect 47.5 3.0 25 5 0 0
+# column
+draw rect 47.5 3.0 5 35 0 0
+drawflush display1
+stop
+
+# M
+# row
+draw rect 52.5 28.0 5 5 0 0
+draw rect 62.5 28.0 5 5 0 0
+draw rect 57.5 23.0 5 5 0 0
+# column
+draw rect 47.5 3.0 5 35 0 0
+draw rect 67.5 3.0 5 35 0 0
+drawflush display1
+stop
+
+# N
+# row
+draw rect 52.5 23.0 5 5 0 0
+draw rect 57.5 18.0 5 5 0 0
+draw rect 62.5 13.0 5 5 0 0
+# column
+draw rect 47.5 3.0 5 35 0 0
+draw rect 67.5 3.0 5 35 0 0
+drawflush display1
+stop
+
+# O
+# row
+draw rect 52.5 33.0 15 5 0 0
+draw rect 52.5 3.0 15 5 0 0
+# column
+draw rect 47.5 8.0 5 25 0 0
+draw rect 67.5 8.0 5 25 0 0
+drawflush display1
+stop
+
+# P
+# row
+draw rect 47.5 33.0 20 5 0 0
+draw rect 47.5 18.0 20 5 0 0
+# column
+draw rect 47.5 3.0 5 35 0 0
+draw rect 67.5 23.0 5 10 0 0
+drawflush display1
+stop
+
+# Q
+# row
+draw rect 52.5 33.0 15 5 0 0
+draw rect 52.5 8.0 15 5 0 0
+draw rect 62.5 3.0 10 5 0 0
+# column
+draw rect 47.5 13.0 5 20 0 0
+draw rect 67.5 13.0 5 20 0 0
+drawflush display1
+stop
+
+# R
+# row
+draw rect 47.5 33.0 20 5 0 0
+draw rect 47.5 18.0 20 5 0 0
+draw rect 57.5 13.0 5 5 0 0
+draw rect 62.5 8.0 5 5 0 0
+draw rect 67.5 3.0 5 5 0 0
+# column
+draw rect 47.5 3.0 5 35 0 0
+draw rect 67.5 23.0 5 10 0 0
+drawflush display1
+stop
+
+# S
+# row
+draw rect 52.5 33.0 15 5 0 0
+draw rect 52.5 18.0 15 5 0 0
+draw rect 52.5 3.0 15 5 0 0
+draw rect 67.5 28.0 5 5 0 0
+draw rect 47.5 8.0 5 5 0 0
+# column
+draw rect 47.5 23.0 5 10 0 0
+draw rect 67.5 8.0 5 10 0 0
+drawflush display1
+stop
+
+# T
+# row
+draw rect 47.5 33.0 25 5 0 0
+# column
+draw rect 57.5 3.0 5 35 0 0
+drawflush display1
+stop
+
+# U
+# row
+draw rect 52.5 3.0 15 5 0 0
+# column
+draw rect 47.5 8.0 5 30 0 0
+draw rect 67.5 8.0 5 30 0 0
+drawflush display1
+stop
+
+# V
+# row
+draw rect 52.5 8.0 5 5 0 0
+draw rect 62.5 8.0 5 5 0 0
+draw rect 57.5 3.0 5 5 0 0
+# column
+draw rect 47.5 13.0 5 25 0 0
+draw rect 67.5 13.0 5 25 0 0
+drawflush display1
+stop
+
+# W
+# row
+draw rect 52.5 3.0 5 5 0 0
+draw rect 62.5 3.0 5 5 0 0
+# column
+draw rect 47.5 8.0 5 30 0 0
+draw rect 57.5 8.0 5 15 0 0
+draw rect 67.5 8.0 5 30 0 0
+drawflush display1
+stop
+
+# X
+# row
+draw rect 52.5 23.0 5 5 0 0
+draw rect 62.5 23.0 5 5 0 0
+draw rect 57.5 18.0 5 5 0 0
+draw rect 52.5 13.0 5 5 0 0
+draw rect 62.5 13.0 5 5 0 0
+# column
+draw rect 47.5 3.0 5 10 0 0
+draw rect 47.5 28.0 5 10 0 0
+draw rect 67.5 3.0 5 10 0 0
+draw rect 67.5 28.0 5 10 0 0
+drawflush display1
+stop
+
+# Y
+# row
+draw rect 52.5 18.0 5 5 0 0
+draw rect 62.5 18.0 5 5 0 0
+# column
+draw rect 47.5 23.0 5 15 0 0
+draw rect 57.5 3.0 5 15 0 0
+draw rect 67.5 23.0 5 15 0 0
+drawflush display1
+stop
+
+# Z
+# row
+draw rect 47.5 33.0 25 5 0 0
+draw rect 47.5 3.0 25 5 0 0
+draw rect 67.5 28.0 5 5 0 0
+draw rect 62.5 23.0 5 5 0 0
+draw rect 57.5 18.0 5 5 0 0
+draw rect 52.5 13.0 5 5 0 0
+draw rect 47.5 8.0 5 5 0 0
+# column
+drawflush display1
+stop

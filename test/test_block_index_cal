@@ -1,0 +1,72 @@
+set char_count 4
+set block_width 2
+set block_height 1
+# block_scale: one block contains block_scale * block_scale(2 * 2) characters
+set block_scale 2
+
+op mul row_size block_width block_scale
+
+# character coordinate (x, y)
+op sub count char_count 1
+op idiv x count row_size
+op mod y count row_size
+
+# block coordinate (block_x, block_y)
+op idiv block_x x block_scale
+op idiv block_y y block_scale
+
+# block = block_x * block_height + block_y
+op mul block block_x block_height
+op add block block block_y
+
+# index
+op mul a block_x block_scale
+op mul b block_y block_scale
+
+op sub index_x x a
+op sub index_y y b
+
+# index = index_x * block_scale + index_y
+op mul index index_x block_scale
+op add index index index_y
+
+print index
+printflush message1
+
+
+12 34
+56 78
+ab cd
+ef gh
+
+2*1
+
+# char_count = 4
+row_size = block_width * block_scale  # 4
+x = (char_count - 1) // row_size      # x = 0
+y = (char_count - 1) % row_size       # y = 3
+block_x = x // block_scale            # block_x = 0
+block_y = y // block_scale            # block_y = 1
+block = block_x * block_height + block_y
+
+a = block_x * block_scale
+b = block_y * block_scale
+index_x = x - a
+index_y = y - b
+index = index_x * block_scale + index_y
+
+0 1 0 2
+0 3
+0 1
+
+0 1 0 2
+1 3
+1 1
+
+1 0 2 0
+2 0
+0 0
+
+1 1 2 2
+2 2
+0 0

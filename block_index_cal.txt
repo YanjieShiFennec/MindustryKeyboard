@@ -1,0 +1,54 @@
+# calculate the location of block and index according to the character count
+
+set char_count 0
+
+read input_event cell1 1
+jump 1 equal input_event 0
+
+#init
+set block_width 2
+set block_height 1
+# block_scale: one block contains block_scale * block_scale(2 * 2) characters
+set block_scale 2
+op mul row_size block_width block_scale
+
+op mul max_char block_width block_height
+op mul max_char max_char block_scale
+op mul max_char max_char block_scale
+
+write 0 cell1 1
+# overwrite
+op mod char_count char_count max_char
+op add char_count char_count 1
+
+# character coordinate (x, y)
+op sub count char_count 1
+op idiv x count row_size
+op mod y count row_size
+
+# block coordinate (block_x, block_y)
+op idiv block_x x block_scale
+op idiv block_y y block_scale
+
+# block = block_x * block_height + block_y
+op mul block block_x block_height
+op add block block block_y
+
+# index
+op mul a block_x block_scale
+op mul b block_y block_scale
+
+op sub index_x x a
+op sub index_y y b
+
+# index = index_x * block_scale + index_y
+op mul index index_x block_scale
+op add index index index_y
+
+# block 和 link 相关，这里显示屏 id 从 1 开始，block += 1
+op add block block 1
+write block cell1 2
+write index cell1 3
+write 1 cell1 4
+
+jump 1 always

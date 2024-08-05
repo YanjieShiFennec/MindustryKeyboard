@@ -1,0 +1,21 @@
+# reset all screens
+
+# button control
+sensor result switch1 @enabled
+jump 11 equal result 0
+control enabled switch1 0 0 0 0
+
+#refresh
+set i 1
+set block_num 2
+
+# connect screen by i
+getlink display i
+draw color 255 255 255 255 0 0
+draw rect 0 0 80 80 0 0
+drawflush display
+op add i i 1
+jump 5 lessThanEq i block_num
+
+end
+
